@@ -1,0 +1,56 @@
+{
+  "name": "room-jamendo-on-motoinu",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test:lint": "standard",
+    "pretest:node": "rm -r t/dbs && mkdir -p t/dbs",
+    "test:deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test:node": "NODE_ENV=test tape t/*.js",
+    "test": "npm-run-all -s test:deps test:lint test:node",
+    "build": "browserify app/main.js -o static/js/bundle.js"
+  },
+  "keywords": [],
+  "author": "ishiduca@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "array-shuffle": "^1.0.1",
+    "bl": "^1.2.1",
+    "bulma": "^0.6.2",
+    "ecstatic": "^3.2.0",
+    "encoding-down": "^4.0.0",
+    "is-empty": "^1.2.0",
+    "is-my-json-valid": "^2.17.2",
+    "json-stringify-safe": "^5.0.1",
+    "jsonist": "^2.1.0",
+    "leveldown": "^3.0.0",
+    "levelup": "^2.0.2",
+    "mississippi": "^3.0.0",
+    "motoinu": "git+https://github.com/ishiduca/motoinu.git",
+    "on-load": "^3.4.0",
+    "routington": "^1.0.3",
+    "sheetify": "^7.3.0",
+    "smoothscroll": "^0.4.0",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.1.1",
+    "dependency-check": "^3.1.0",
+    "npm-run-all": "^4.1.2",
+    "standard": "^11.0.0",
+    "tape": "^4.9.0",
+    "yo-yoify": "^4.3.0"
+  },
+  "browserify": {
+    "transform": [
+      "yo-yoify",
+      "sheetify"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "t/"
+    ]
+  }
+}

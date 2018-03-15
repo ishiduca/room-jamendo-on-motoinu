@@ -1,0 +1,8 @@
+client_id.json
+*dbs
+node_modules
+package-lock.json
+static/js
+*swp
+*DS_Store
+app2
